@@ -1,10 +1,10 @@
-site_name: VNM SimCenter Online Guide
-site_url: https://vnmsimulation.github.io/
-site_description: VNM SimCenter Configuration Manual — Direct Drive Wheelbases, Pedals, Steering Wheels and more.
+site_name: VNM Simulation Online Guide
+site_url: https://hungf26.github.io/vnm-docs/
+site_description: VNM Simulation — Direct Drive User Manual & SimCenter Configuration Guide.
 site_author: VNM Simulation JSC
 
-repo_url: https://github.com/vnmsimulation/vnm-docs
-repo_name: vnmsimulation/vnm-docs
+repo_url: https://github.com/hungf26/vnm-docs
+repo_name: hungf26/vnm-docs
 edit_uri: ""
 
 theme:
@@ -91,6 +91,11 @@ nav:
     - Telemetry Profiles: wheelbase/telemetry-profiles.md
     - Firmware Update: wheelbase/firmware.md
     - Troubleshooting: wheelbase/troubleshooting.md
+  - Direct Drive User Manual:
+    - Specifications: user-manual/index.md
+    - Mounting Pattern: user-manual/mounting.md
+    - Connection: user-manual/connection.md
+    - Safety & Operation: user-manual/safety.md
 
 extra:
   version:
