@@ -15,11 +15,10 @@ Figure 2. Mounting VNM Wheelbase on a simulator rig front mount bracket.
 
 Figure 3. Mounting VNM Wheelbase using a mounting bracket
 
-+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Wheelbase Xtreme                  | is mounted with 4xM8 bolts length 30mm with 1,25mm thread pitch (1); 4xM8 spring washers (2); 4xM8 flat washers (3) and 4xM8 nuts (4) in Figure 2 |
-+:=================================:+:=================================================================================================================================================:+
-| Wheelbase Premier, Elite, Supreme | are mounted with 4xM8 bolts length 25mm with 1,25mm thread pitch (1); 4xM8 spring washers (2) and 4 xM8 flat washers (3) in Figure 3.             |
-+===================================+===================================================================================================================================================+
+| Wheelbase | Bolt specification |
+|---|---|
+| **Xtreme** | 4×M8 bolts length 30mm, 1.25mm thread pitch (1); 4×M8 spring washers (2); 4×M8 flat washers (3); 4×M8 nuts (4) — see Figure 2 |
+| **Premier, Elite, Supreme** | 4×M8 bolts length 25mm, 1.25mm thread pitch (1); 4×M8 spring washers (2); 4×M8 flat washers (3) — see Figure 3 |
 
 ## 2.2. Side mounting pattern
 Only The wheelbase Premier, Elite, Supreme have side mounting pattern
