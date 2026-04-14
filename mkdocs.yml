@@ -1,0 +1,104 @@
+site_name: VNM SimCenter Online Guide
+site_url: https://vnmsimulation.github.io/
+site_description: VNM SimCenter Configuration Manual — Direct Drive Wheelbases, Pedals, Steering Wheels and more.
+site_author: VNM Simulation JSC
+
+repo_url: https://github.com/vnmsimulation/vnm-docs
+repo_name: vnmsimulation/vnm-docs
+edit_uri: ""
+
+theme:
+  name: material
+  # logo: assets/images/vnm-logo.png   # Add your logo file here
+  # favicon: assets/images/vnm-logo.png
+  icon:
+    logo: material/steering
+  language: en
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Overview:
+    - Introduction: overview/introduction.md
+    - VNM SimCenter: overview/simcenter-overview.md
+    - Software Interface: overview/software-interface.md
+    - System Requirements: overview/system-requirements.md
+    - Installation: overview/installation.md
+  - Hardware Setup:
+    - Getting Started: hardware/index.md
+    - Safety Notice: hardware/safety.md
+    - USB Connection: hardware/usb-connection.md
+    - Power Connection: hardware/power-connection.md
+    - Mounting the Wheelbase: hardware/mounting.md
+    - Attaching the Steering Wheel: hardware/steering-wheel.md
+    - Additional Devices: hardware/additional-devices.md
+    - Power-On Procedure: hardware/power-on.md
+    - Verify Device Detection: hardware/device-detection.md
+  - Wheelbase Configuration:
+    - Overview: wheelbase/index.md
+    - Basic Settings: wheelbase/basic-settings.md
+    - Advanced Settings: wheelbase/advanced-settings.md
+    - Game Settings: wheelbase/game-settings.md
+    - Profiles: wheelbase/profiles.md
+    - Telemetry: wheelbase/telemetry.md
+    - Telemetry Profiles: wheelbase/telemetry-profiles.md
+    - Firmware Update: wheelbase/firmware.md
+    - Troubleshooting: wheelbase/troubleshooting.md
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/vnmsimulation
+    - icon: fontawesome/solid/globe
+      link: https://www.vnmsimulation.com
+
+copyright: Copyright &copy; 2024 VNM Simulation JSC
