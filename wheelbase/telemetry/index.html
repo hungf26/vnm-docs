@@ -1,0 +1,2484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="VNM Simulation — Direct Drive User Manual & SimCenter Configuration Guide.">
+      
+      
+        <meta name="author" content="VNM Simulation JSC">
+      
+      
+        <link rel="canonical" href="https://hungf26.github.io/vnm-docs/wheelbase/telemetry/">
+      
+      
+        <link rel="prev" href="../profiles/">
+      
+      
+        <link rel="next" href="../telemetry-profiles/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Telemetry - VNM Simulation Online Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#telemetry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="VNM Simulation Online Guide" class="md-header__button md-logo" aria-label="VNM Simulation Online Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19.92c1.8-.22 3.35-.97 4.65-2.27S19.7 14.8 19.92 13h-3c-.22 1-.68 1.84-1.38 2.54S14 16.7 13 16.92zM10 8h4l3 3h2.92c-.25-1.95-1.13-3.62-2.65-5C15.76 4.66 14 4 12 4s-3.76.66-5.27 2c-1.52 1.38-2.4 3.05-2.65 5H7zm1 11.92v-3c-1-.22-1.84-.68-2.54-1.38S7.3 14 7.08 13h-3c.22 1.77.97 3.3 2.27 4.6S9.2 19.67 11 19.92M12 2c2.75 0 5.1 1 7.05 2.95S22 9.25 22 12s-1 5.1-2.95 7.05S14.75 22 12 22s-5.1-1-7.05-2.95S2 14.75 2 12s1-5.1 2.95-7.05S9.25 2 12 2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VNM Simulation Online Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Telemetry
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hungf26/vnm-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hungf26/vnm-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../overview/introduction/" class="md-tabs__link">
+          
+  
+  
+  Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/" class="md-tabs__link">
+          
+  
+  
+  Hardware Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Wheelbase Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../user-manual/" class="md-tabs__link">
+          
+  
+  
+  Direct Drive User Manual
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="VNM Simulation Online Guide" class="md-nav__button md-logo" aria-label="VNM Simulation Online Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19.92c1.8-.22 3.35-.97 4.65-2.27S19.7 14.8 19.92 13h-3c-.22 1-.68 1.84-1.38 2.54S14 16.7 13 16.92zM10 8h4l3 3h2.92c-.25-1.95-1.13-3.62-2.65-5C15.76 4.66 14 4 12 4s-3.76.66-5.27 2c-1.52 1.38-2.4 3.05-2.65 5H7zm1 11.92v-3c-1-.22-1.84-.68-2.54-1.38S7.3 14 7.08 13h-3c.22 1.77.97 3.3 2.27 4.6S9.2 19.67 11 19.92M12 2c2.75 0 5.1 1 7.05 2.95S22 9.25 22 12s-1 5.1-2.95 7.05S14.75 22 12 22s-5.1-1-7.05-2.95S2 14.75 2 12s1-5.1 2.95-7.05S9.25 2 12 2"/></svg>
+
+    </a>
+    VNM Simulation Online Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hungf26/vnm-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hungf26/vnm-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/simcenter-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VNM SimCenter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/software-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/system-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety Notice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/usb-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USB Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/power-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/mounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting the Wheelbase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/steering-wheel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attaching the Steering Wheel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/additional-devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional Devices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/power-on/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Power-On Procedure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/device-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify Device Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wheelbase Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wheelbase Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-telemetry-force-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Telemetry Force Distribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-telemetry-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Telemetry Plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-installing-telemetry-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Installing Telemetry Plugins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-telemetry-effect-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Telemetry Effect Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-telemetry-tab-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Telemetry Tab Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-games-and-telemetry-force-telemetry-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Games and Telemetry force/ Telemetry Effects
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telemetry-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry Profiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware Update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Direct Drive User Manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Direct Drive User Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/mounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety & Operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-telemetry-force-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Telemetry Force Distribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-telemetry-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Telemetry Plugin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-installing-telemetry-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Installing Telemetry Plugins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-telemetry-effect-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Telemetry Effect Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-telemetry-tab-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Telemetry Tab Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-games-and-telemetry-force-telemetry-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Games and Telemetry force/ Telemetry Effects
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="telemetry">Telemetry<a class="headerlink" href="#telemetry" title="Permanent link">&para;</a></h1>
+<p>The Telemetry tab allows the wheelbase to generate additional Force Feedback based on vehicle telemetry data received from supported sim racing games.</p>
+<p>Unlike standard DirectInput Force Feedback, which is transmitted directly from the game, Telemetry-based feedback is calculated by the VNM telemetry engine using real-time vehicle data received from supported games.</p>
+<p>Depending on the selected FFB Mode, telemetry data may either:</p>
+<ul>
+<li>
+<p>supplement the Force Feedback generated by the game, or</p>
+</li>
+<li>
+<p>generate Force Feedback directly from vehicle telemetry data.</p>
+</li>
+</ul>
+<p>Telemetry-based feedback can reproduce additional driving cues such as:</p>
+<ul>
+<li>
+<p>gear shifts</p>
+</li>
+<li>
+<p>wheel slip</p>
+</li>
+<li>
+<p>road surface detail</p>
+</li>
+<li>
+<p>ABS activity</p>
+</li>
+</ul>
+<p>These effects help provide additional vehicle feedback and enhance the overall driving experience.</p>
+<h2 id="61-telemetry-force-distribution">6.1. Telemetry Force Distribution<a class="headerlink" href="#61-telemetry-force-distribution" title="Permanent link">&para;</a></h2>
+<p>Telemetry Force Feedback in VNM SimCenter consists of two components:</p>
+<ul>
+<li>
+<p>Telemetry Core Force</p>
+</li>
+<li>
+<p>Telemetry Effects</p>
+</li>
+</ul>
+<p>Telemetry Core Forces represent the continuous forces generated from vehicle telemetry data, such as steering load or vehicle dynamics.</p>
+<p>Telemetry Effects are short-duration signals generated from specific vehicle events, for example:</p>
+<ul>
+<li>
+<p>gear shifts</p>
+</li>
+<li>
+<p>ABS activation</p>
+</li>
+<li>
+<p>wheel spin</p>
+</li>
+<li>
+<p>road texture events</p>
+</li>
+</ul>
+<p>To ensure that event-based effects remain clearly perceptible without overwhelming the main steering forces, VNM SimCenter automatically manages the distribution of force output between these two components.</p>
+<p>Force Allocation Behavior</p>
+<p>When no telemetry effects are enabled</p>
+<p>Telemetry Core Forces = 100%
+Telemetry Effects = 0%</p>
+<p>The wheelbase reproduces the full telemetry-based force feedback signal.</p>
+<p>When one or more telemetry effects are enabled. A portion of the available torque output is reserved for telemetry effects so that event-based feedback remains clearly perceptible</p>
+<p>By default, approximately 70% of the force output is allocated to telemetry forces and 30% to telemetry effects.</p>
+<p>This automatic distribution helps maintain a balance between:</p>
+<ul>
+<li>
+<p>continuous steering forces</p>
+</li>
+<li>
+<p>short event-based feedback signals</p>
+</li>
+</ul>
+<p>Recommended Usage</p>
+<p>Telemetry effects are designed to complement the main steering forces generated from telemetry data.</p>
+<p>Enabling too many telemetry effects simultaneously may too much information (could cause noise) of the continuous telemetry force.</p>
+<p>For the best driving experience, enable only the effects that provide user liking meaningful feedback for the selected sim racing game.</p>
+<h2 id="62-telemetry-plugin">6.2. Telemetry Plugin<a class="headerlink" href="#62-telemetry-plugin" title="Permanent link">&para;</a></h2>
+<p>Telemetry data is provided through a plugin system.</p>
+<p>The plugin receives telemetry data from supported games and sends it to VNM SimCenter, where the data is processed to generate additional Force Feedback effects.</p>
+<p>The plugin system supports two types of plugins:</p>
+<p>Native Plugins</p>
+<p>Native plugins are distributed as DLL files and are loaded directly by VNM SimCenter.</p>
+<p>Python Plugins (deprecated)</p>
+<p>Python plugins consist of two files:</p>
+<ul>
+<li>
+<p>a .vnp file describing the plugin</p>
+</li>
+<li>
+<p>a .vne file containing the execution logic</p>
+</li>
+</ul>
+<p>These plugins allow users or developers to create custom telemetry processing logic.</p>
+<p>Python plugins are deprecated and may be removed in future versions of VNM SimCenter.</p>
+<h2 id="63-installing-telemetry-plugins">6.3. Installing Telemetry Plugins<a class="headerlink" href="#63-installing-telemetry-plugins" title="Permanent link">&para;</a></h2>
+<p>Plugins can be installed using the Plugin Store or by manually copying plugin files into the plugins folder.</p>
+<p>To install a plugin:</p>
+<p>Step 1
+Open the Plugin Store.</p>
+<p>Step 2
+Select the desired plugin.</p>
+<p>Step 3
+Click Install.</p>
+<p>Step 4</p>
+<p>Reload plugin after installing a new plugin to ensure it is properly loaded</p>
+<p>Alternatively, plugin files can be manually copied into the plugins directory located in the same folder as the VNM SimCenter application.</p>
+<p><img alt="media1/media/image5" src="../media1/media/image5.png" /></p>
+<h2 id="64-telemetry-effect-parameters">6.4. Telemetry Effect Parameters<a class="headerlink" href="#64-telemetry-effect-parameters" title="Permanent link">&para;</a></h2>
+<p>Each telemetry effect can be configured using several parameters that control how the effect is generated.</p>
+<p>Typical configuration parameters include the following.</p>
+<p>Enable</p>
+<p>Enables or disables the selected telemetry effect.</p>
+<p>If disabled, the effect will not be generated even if the telemetry event occurs.</p>
+<p>Waveform</p>
+<p>Defines the waveform used to generate the vibration or force signal.</p>
+<p>Available waveform types include:</p>
+<ul>
+<li>
+<p>Sine</p>
+</li>
+<li>
+<p>Triangle</p>
+</li>
+<li>
+<p>Square</p>
+</li>
+<li>
+<p>Sawtooth</p>
+</li>
+<li>
+<p>Constant</p>
+</li>
+</ul>
+<p>Different waveforms produce different vibration characteristics.</p>
+<p>Gain</p>
+<p>Controls the overall gain applied to the effect signal.</p>
+<p>Increasing this value increases the amplitude of the generated force.</p>
+<p>Frequency</p>
+<p>Defines the oscillation frequency of the generated signal.</p>
+<p>Higher frequency values produce faster vibration patterns.</p>
+<p>Duration</p>
+<p>Defines how long the effect lasts after the telemetry event is triggered.</p>
+<p>This parameter is typically used for short events such as gear shifts.</p>
+<p>A value of -1 disables the duration limit</p>
+<h2 id="65-telemetry-tab-settings">6.5. Telemetry Tab Settings<a class="headerlink" href="#65-telemetry-tab-settings" title="Permanent link">&para;</a></h2>
+<p><strong>6.5.1. Gear Shift</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The <strong>Gear Shift effect</strong> generates a short vibration or force pulse when the vehicle changes gear.</p>
+<p>This effect simulates the mechanical sensation that occurs during a gear shift, helping the driver perceive gear changes more clearly through the steering wheel.</p>
+<p>Gear shift feedback can be especially useful in vehicles with sequential gearboxes or paddle shifters, where the driver may rely on tactile feedback rather than visual cues.</p>
+<p><strong>Explanation</strong></p>
+<p>When a gear change event is detected from telemetry data, VNM SimCenter generates a short force signal based on the selected waveform and parameters.</p>
+<p>The strength and character of the effect can be adjusted using several parameters, allowing users to customize how the gear shift feedback feels.</p>
+<p>The generated signal is mixed with the telemetry core force output according to the Telemetry Force Distribution described earlier.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Gear Shift telemetry effect.</p>
+<p>When disabled, no gear shift feedback will be generated.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>
+<p>Sine</p>
+</li>
+<li>
+<p>Triangle</p>
+</li>
+<li>
+<p>Square</p>
+</li>
+<li>
+<p>Sawtooth</p>
+</li>
+</ul>
+<p>Different waveforms produce different vibration characteristics.</p>
+<p>For example:</p>
+<ul>
+<li>
+<p>Sine produces a smooth vibration</p>
+</li>
+<li>
+<p>Square produces a stronger and sharper pulse</p>
+</li>
+</ul>
+<p><strong>Gain</strong></p>
+<p>Controls the overall amplitude of the gear shift signal.</p>
+<p>Higher gain values produce stronger gear shift feedback.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Higher frequencies produce faster vibration patterns, while lower frequencies create slower pulses.</p>
+<p>Typical gear shift effects use relatively high frequencies to simulate a short mechanical impact.</p>
+<p><strong>Duration</strong></p>
+<p>Defines how long the gear shift effect lasts after the shift event is detected.</p>
+<p>Short durations create a quick mechanical \"kick\", while longer durations produce a more sustained vibration.</p>
+<p>Typical values are 10--40 ms depending on user preference.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>For realistic gear shift feedback:</p>
+<ul>
+<li>
+<p>Use short duration values</p>
+</li>
+<li>
+<p>Use medium to high frequencies</p>
+</li>
+<li>
+<p>Avoid excessive gain that may mask other Force Feedback signals</p>
+</li>
+</ul>
+<p>Gear shift feedback should remain subtle and should not overpower the primary steering forces.</p>
+<p><strong>6.5.2 EngineVibe</strong></p>
+<p><strong>Purpose</strong>
+The Engine Vibration effect generates continuous vibration based on the engine speed (RPM) of the vehicle.</p>
+<p>This effect simulates the vibration produced by the engine and drivetrain, providing additional feedback about engine operation and RPM levels through the steering wheel.</p>
+<p>Engine vibration can help drivers perceive engine load and speed without relying solely on visual indicators.</p>
+<p><strong>Explanation</strong>
+When telemetry data reports the current engine RPM, VNM SimCenter generates a vibration signal based on the configured parameters.</p>
+<p>The vibration characteristics vary with engine speed:</p>
+<ul>
+<li>
+<p>As RPM increases, the vibration frequency increases to reflect faster engine operation</p>
+</li>
+<li>
+<p>The vibration strength also increases slightly with RPM to enhance perceptibility</p>
+</li>
+</ul>
+<p>The final vibration frequency is limited within a defined range to prevent excessive vibration and to avoid masking important Force Feedback details such as tire grip and road surface information.</p>
+<p>This ensures that engine vibration provides useful feedback while remaining subtle and non-intrusive.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Engine Vibration telemetry effect.</p>
+<p>When disabled, no engine vibration feedback will be generated.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>
+<p>Sine</p>
+</li>
+<li>
+<p>Triangle</p>
+</li>
+<li>
+<p>Square</p>
+</li>
+<li>
+<p>Sawtooth</p>
+</li>
+</ul>
+<p>A sine waveform is typically recommended for engine vibration because it produces smooth oscillations.</p>
+<p><strong>Gain</strong></p>
+<p>Controls the overall amplitude of the engine vibration signal.</p>
+<p>Higher gain values produce stronger vibration.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the base oscillation frequency of the vibration signal.</p>
+<p>This value acts as the base frequency, which is dynamically adjusted according to engine RPM.</p>
+<p>Higher values produce faster vibration patterns, while lower values result in slower oscillations.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Engine vibration should remain subtle so that it does not interfere with the main steering forces.</p>
+<p>For most vehicles:</p>
+<ul>
+<li>Use moderate gain values</li>
+<li>Use smooth waveforms such as <strong>Sine</strong></li>
+<li>Avoid excessive vibration strength</li>
+</ul>
+<p>This ensures that engine vibration provides additional feedback without masking the core Force Feedback signal.</p>
+<p><strong>Example Settings</strong></p>
+<p>Example baseline configuration:</p>
+<p>Waveform : Sine
+Gain : 20 -- 40
+Frequency : 40 -- 80 Hz</p>
+<p>These values produce a subtle vibration that varies with engine speed while maintaining clear steering feedback.</p>
+<p><strong>6.5.3. RoadTexture</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The Road Texture effect generates subtle vibrations based on road surface telemetry data.</p>
+<p>This effect simulates small surface irregularities of the track, allowing the driver to feel the texture of the road through the steering wheel.</p>
+<p>Road Texture helps improve immersion by providing additional tactile feedback from the driving surface.</p>
+<p><strong>Explanation</strong></p>
+<p>When telemetry data indicates variations in the road surface or tire contact forces, VNM SimCenter generates a vibration signal that reflects the texture of the track.</p>
+<p>Unlike large steering forces generated by vehicle dynamics, road texture feedback consists of small high-frequency vibrations designed to reproduce the fine details of the road surface.</p>
+<p>The resulting signal is mixed with the telemetry core force output according to the Telemetry Force Distribution described earlier.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Road Texture telemetry effect.</p>
+<p>When disabled, no road surface vibration will be generated.</p>
+<p><strong>Waveform</strong></p>
+<p>Road texture is generated from real-time telemetry data. Therefore this effect typically uses a constant force signal rather than a predefined waveform.</p>
+<p><strong>Gain</strong></p>
+<p>Controls the overall amplitude of the road texture signal.</p>
+<p>Higher values increase the strength of road surface vibrations.</p>
+<p>Excessive gain may produce unrealistic steering vibration.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Road texture effects should remain subtle and should not overpower the primary Force Feedback generated by the vehicle physics.</p>
+<p>For realistic results:</p>
+<ul>
+<li>
+<p>use moderate gain values</p>
+</li>
+<li>
+<p>use medium to high frequencies</p>
+</li>
+<li>
+<p>avoid excessive vibration strength</p>
+</li>
+</ul>
+<p>Too much road texture feedback may mask important steering forces such as tire grip or weight transfer.</p>
+<p><strong>6.5.4. ABS</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The ABS effect generates vibration feedback when the vehicle's Anti-lock Braking System (ABS) is activated.</p>
+<p>This effect helps the driver detect when the braking system is approaching the traction limit and the ABS system begins to modulate brake pressure.</p>
+<p>Providing tactile feedback for ABS activation can help drivers better control braking force during heavy braking situations.</p>
+<p><strong>Explanation</strong></p>
+<p>When telemetry data indicates that the ABS system is active, VNM SimCenter generates a vibration signal through the wheelbase.</p>
+<p>The vibration typically consists of rapid pulses that simulate the sensation of brake modulation occurring during ABS operation.</p>
+<p>This feedback helps inform the driver that the wheels are near the limit of grip and that braking pressure may need to be adjusted.</p>
+<p>The generated signal is mixed with the telemetry force output according to the Telemetry Force Distribution described earlier.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the ABS telemetry effect.</p>
+<p>When disabled, no ABS vibration feedback will be generated.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the ABS vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>
+<p>Sine</p>
+</li>
+<li>
+<p>Triangle</p>
+</li>
+<li>
+<p>Square</p>
+</li>
+<li>
+<p>Sawtooth</p>
+</li>
+</ul>
+<p>For ABS simulation, Sine or Triangle waveforms often provide clearer pulse feedback.</p>
+<p><strong>Gain</strong></p>
+<p>Controls the overall amplitude of the ABS vibration signal.</p>
+<p>Higher values produce stronger vibration when ABS activates.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Short durations are typically recommended to simulate rapid brake pressure modulation.</p>
+<p><strong>Brake Input ABS Trigger</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Defines the brake pedal input level required before the ABS vibration effect can be activated.</p>
+<p><strong>Explanation</strong></p>
+<p>Brake Input ABS Trigger acts as a minimum brake pedal threshold.
+The ABS telemetry effect will only be allowed to activate when the brake pedal input exceeds this value.</p>
+<p>This prevents the ABS vibration from being triggered during light braking situations where ABS is unlikely to occur.</p>
+<p>For example, if Brake Input ABS Trigger is set to 5000, the ABS vibration effect will only activate when the brake pedal input exceeds this threshold and an ABS event is detected.</p>
+<p>Using a brake input threshold helps ensure that ABS feedback is generated only during heavy braking conditions where the Anti-lock Braking System is likely to engage.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Use a moderate threshold value to avoid unnecessary vibration during normal braking.</p>
+<p>Higher values require stronger brake input before the ABS effect can activate.
+Lower values allow ABS feedback to trigger earlier.</p>
+<p><strong>ABS Trigger</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Defines the telemetry threshold used to detect ABS activity.</p>
+<p><strong>Explanation</strong></p>
+<p>ABS Trigger determines the sensitivity of the ABS telemetry signal required to activate the ABS vibration effect.</p>
+<p>When the telemetry data indicates that the ABS system is active and exceeds the configured ABS Trigger level, the wheelbase generates the configured ABS vibration signal.</p>
+<p>Lower values make the ABS effect more sensitive and allow it to trigger more easily.
+Higher values require stronger ABS activity before the vibration effect is generated.</p>
+<p>This parameter allows users to adjust how early or aggressively the ABS feedback is felt through the steering wheel.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Lower values produce earlier ABS feedback and may generate more frequent vibration.</p>
+<p>Higher values reduce sensitivity and ensure that ABS vibration is generated only during strong ABS activation.</p>
+<p>Users should adjust this value according to the behavior of the specific racing simulator and vehicle.</p>
+<p>Note: Only iRacing uses ABS flag to generate ABS signal, other games use other telemetries to calculate.</p>
+<p><strong>6.5.5. Brake Lock Up</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The Brake Lockup effect generates vibration feedback when one or more wheels begin to lock during braking.</p>
+<p>This effect helps the driver detect loss of tire rotation caused by excessive braking force.
+Feeling this feedback through the steering wheel allows the driver to reduce brake pressure and regain traction more quickly.</p>
+<p>Brake lockup feedback is especially useful in racing simulators where vehicles may not use ABS or when ABS is disabled.</p>
+<p><strong>Explanation</strong></p>
+<p>When telemetry data indicates that a wheel has stopped rotating relative to the vehicle speed (wheel lock condition), VNM SimCenter generates a vibration signal through the wheelbase.</p>
+<p>This vibration simulates the harsh mechanical sensation associated with a tire sliding on the track surface during heavy braking.</p>
+<p>The generated signal is mixed with the telemetry force output according to the Telemetry Force Distribution described earlier.</p>
+<p>Brake Lockup feedback typically appears as a short, sharp vibration that alerts the driver that the braking force has exceeded the available tire grip.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Brake Lockup telemetry effect.</p>
+<p>When disabled, no vibration feedback will be generated during wheel lock events.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>Sine</li>
+<li>Triangle</li>
+<li>Square</li>
+<li>Sawtooth</li>
+</ul>
+<p>Square or Triangle waveforms are typically recommended for Brake Lockup feedback because they produce sharper pulses that are easier to perceive.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Higher frequencies produce faster vibration pulses, while lower frequencies generate slower feedback patterns.</p>
+<p>Typical lockup feedback uses medium to high frequencies to simulate tire sliding vibration.</p>
+<p><strong>Brake Input BLU Trigger</strong></p>
+<p>Defines the minimum brake pedal input required before the Brake Lockup effect can activate.</p>
+<p>This prevents the effect from triggering during light braking situations.</p>
+<p>Higher values require stronger brake pedal input before lockup feedback is allowed.</p>
+<p><strong>BLU Trigger</strong></p>
+<p>Defines the telemetry threshold used to detect a wheel lock condition.</p>
+<p>Lower values make the effect more sensitive and allow earlier detection of wheel lock.</p>
+<p>Higher values require more severe wheel lock conditions before the vibration effect is triggered.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Brake Lockup feedback should remain noticeable but not overpower the primary steering forces.</p>
+<p>For realistic results:</p>
+<ul>
+<li>Use moderate strength values</li>
+<li>Use medium to high frequencies</li>
+<li>Avoid excessive gain that may mask tire grip feedback</li>
+</ul>
+<p>This effect is particularly useful in racing games where precise brake modulation is required to prevent wheel lock.</p>
+<p><strong>6.5.6. Wheel Spin</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The Wheel Spin effect generates vibration feedback when the driven wheels begin to spin faster than the available tire grip during acceleration.</p>
+<p>This effect helps the driver detect loss of traction caused by excessive throttle input. Feeling this feedback through the steering wheel allows the driver to reduce throttle and regain traction more effectively.</p>
+<p>Wheel spin feedback is especially useful in high-power vehicles where throttle control is critical.</p>
+<p><strong>Explanation</strong></p>
+<p>When telemetry data indicates that the driven wheels are rotating faster than the vehicle speed (wheel slip condition), VNM SimCenter generates a vibration signal through the wheelbase.</p>
+<p>This vibration simulates the sensation of tire slip that occurs when traction is lost under acceleration.</p>
+<p>The generated signal is mixed with the telemetry force output according to the Telemetry Force Distribution described earlier.</p>
+<p>Wheel spin feedback typically appears as a vibration that increases when throttle input exceeds the available grip.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Wheel Spin telemetry effect.</p>
+<p>When disabled, no vibration feedback will be generated during wheel spin events.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>Sine</li>
+<li>Triangle</li>
+<li>Square</li>
+<li>Sawtooth</li>
+</ul>
+<p>Sine waveforms are commonly used for wheel spin feedback because they produce smooth vibration patterns.</p>
+<p><strong>Strength</strong></p>
+<p>Controls the intensity of the vibration generated during a wheel spin event.</p>
+<p>Higher values produce stronger feedback.</p>
+<p>Excessive values may interfere with the main steering forces.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Higher frequency values produce faster vibration patterns, while lower values generate slower oscillations.</p>
+<p>Wheel spin feedback typically uses medium to high frequencies to simulate tire slip vibration.</p>
+<p><strong>Throttle Trigger</strong></p>
+<p>Defines the minimum throttle input required before the Wheel Spin effect can activate.</p>
+<p>This prevents the effect from triggering during very light throttle input.</p>
+<p>Higher values require stronger throttle input before wheel spin feedback is allowed.</p>
+<p><strong>Wheel Spin Trigger</strong></p>
+<p>Defines the telemetry threshold used to detect wheel slip.</p>
+<p>Lower values make the effect more sensitive and allow earlier detection of wheel spin.</p>
+<p>Higher values require more severe wheel slip before the vibration effect is generated.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Wheel spin feedback should remain noticeable but not overpower the primary steering forces.</p>
+<p>For realistic results:</p>
+<ul>
+<li>Use moderate strength values</li>
+<li>Use medium to high frequencies</li>
+<li>Avoid excessive vibration strength</li>
+</ul>
+<p>Proper tuning allows the driver to feel traction loss during acceleration without masking important steering information such as tire grip or vehicle balance.</p>
+<p><strong>6.5.7. Understeer</strong></p>
+<p><strong>Purpose</strong></p>
+<p>The Understeer effect generates vibration feedback when the front tires begin to lose grip during cornering.</p>
+<p>This effect helps the driver detect understeer conditions where the vehicle turns less than expected despite steering input.</p>
+<p>Feeling this feedback through the steering wheel allows the driver to adjust steering angle or reduce throttle in order to regain front tire grip.</p>
+<p><strong>Explanation</strong></p>
+<p>When telemetry data indicates that the front tires have exceeded their optimal slip angle and begin to slide, VNM SimCenter generates a vibration signal through the wheelbase.</p>
+<p>This feedback represents the reduction in front tire grip that occurs during understeer.</p>
+<p>The vibration is designed to alert the driver that the front tires are approaching or exceeding their traction limit.</p>
+<p>The generated signal is mixed with the telemetry force output according to the Telemetry Force Distribution described earlier.</p>
+<p>Understeer feedback typically appears as a subtle vibration that increases as the front tires lose grip.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Understeer telemetry effect.</p>
+<p>When disabled, no feedback will be generated when the vehicle experiences understeer.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>Sine</li>
+<li>Triangle</li>
+<li>Square</li>
+<li>Sawtooth</li>
+</ul>
+<p>A sine waveform is commonly used because it produces smooth vibration patterns.</p>
+<p><strong>Gain</strong></p>
+<p>Controls how strongly the understeer telemetry signal contributes to the generated vibration.</p>
+<p>Higher values increase the sensitivity of the effect to understeer telemetry data.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Lower frequencies produce slower oscillations, while higher frequencies produce faster vibration patterns.</p>
+<p>Understeer feedback typically uses lower to medium frequencies so that the vibration remains noticeable but not distracting.</p>
+<p><strong>Understeer Trigger</strong></p>
+<p>Defines the telemetry threshold required before the Understeer effect activates.</p>
+<p>Lower values make the effect more sensitive and allow earlier detection of understeer.</p>
+<p>Higher values require stronger front tire slip before the vibration is generated.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Understeer feedback should remain subtle and should not overpower the main steering forces generated by the vehicle physics.</p>
+<p>For realistic results:</p>
+<ul>
+<li>Use moderate gain values</li>
+<li>Use low to medium frequencies</li>
+<li>Avoid excessive vibration strength</li>
+</ul>
+<p>Proper tuning allows the driver to detect front tire grip loss without masking important steering feedback such as tire load or weight transfer.</p>
+<p><strong>6.5.8. Oversteer</strong></p>
+<p>The Oversteer effect generates vibration feedback when the rear tires begin to lose grip during cornering.</p>
+<p>This effect helps the driver detect oversteer conditions where the rear of the vehicle begins to slide outward due to loss of traction.</p>
+<p>Feeling this feedback through the steering wheel allows the driver to react quickly by adjusting steering input or throttle to regain rear tire grip and stabilize the vehicle.</p>
+<p>When telemetry data indicates that the rear tires exceed their optimal slip angle and begin to slide, VNM SimCenter generates a vibration signal through the wheelbase.</p>
+<p>This vibration represents the loss of rear traction that occurs during oversteer.</p>
+<p>The feedback is designed to alert the driver that the rear tires are approaching or exceeding their grip limit.</p>
+<p>The generated signal is mixed with the telemetry force output according to the Telemetry Force Distribution described earlier.</p>
+<p>Oversteer feedback typically appears as a noticeable vibration that increases as the rear tires lose traction.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>Enable</strong></p>
+<p>Enables or disables the Oversteer telemetry effect.</p>
+<p>When disabled, no feedback will be generated when the vehicle experiences oversteer.</p>
+<p><strong>Waveform</strong></p>
+<p>Defines the waveform used to generate the vibration signal.</p>
+<p>Available waveform types may include:</p>
+<ul>
+<li>Sine</li>
+<li>Triangle</li>
+<li>Square</li>
+<li>Sawtooth</li>
+</ul>
+<p>Square or Triangle waveforms are often used because they produce clearer vibration pulses that are easier to detect during rapid rear traction loss.</p>
+<p><strong>Gain</strong></p>
+<p>Controls how strongly the oversteer telemetry signal contributes to the generated vibration.</p>
+<p>Higher values increase the sensitivity of the effect to rear tire slip telemetry data.</p>
+<p><strong>Frequency</strong></p>
+<p>Defines the oscillation frequency of the vibration signal.</p>
+<p>Lower frequencies produce slower oscillations, while higher frequencies generate faster vibration patterns.</p>
+<p>Oversteer feedback typically uses low to medium frequencies so the vibration remains clearly perceptible during rear traction loss.</p>
+<p><strong>Oversteer Trigger</strong></p>
+<p>Defines the telemetry threshold required before the Oversteer effect activates.</p>
+<p>Lower values make the effect more sensitive and allow earlier detection of rear tire slip.</p>
+<p><strong>Recommended Usage</strong></p>
+<p>Higher values require stronger oversteer conditions before the vibration is generated.</p>
+<p>Oversteer feedback should remain noticeable but should not overpower the primary steering forces.</p>
+<p>For realistic results:</p>
+<ul>
+<li>Use moderate gain values</li>
+<li>Use low to medium frequencies</li>
+<li>Avoid excessive vibration strength</li>
+</ul>
+<p>Proper tuning allows the driver to detect rear traction loss early without masking important steering feedback such as tire grip and vehicle balance.</p>
+<p><strong>6.5.9. General</strong></p>
+<p>The General section contains global parameters that affect how telemetry-based force feedback signals are processed before being sent to the wheelbase.</p>
+<p>These settings help control the overall behavior of telemetry forces, prevent excessive force spikes, and allow additional steering effects to be applied to telemetry-generated feedback.</p>
+<p><strong>Haptic Only</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Determines whether telemetry effects are applied only to haptic-style vibration signals.</p>
+<p><strong>Explanation</strong></p>
+<p>When Haptic Only is enabled, telemetry effects generate vibration feedback without modifying the main steering torque produced by the wheelbase.</p>
+<p>This mode is useful when telemetry effects are intended to provide additional tactile cues without interfering with the primary steering forces generated by the simulator physics.</p>
+<p>When disabled, telemetry effects may also influence the main force feedback signal.</p>
+<p>This feature is used to test each effect with its settings.</p>
+<p><strong>Haptic Headroom</strong></p>
+<p><strong>Purpose</strong>
+Reserves a portion of torque for telemetry effects.</p>
+<p><strong>Explanation</strong>
+Under high steering load, most torque may be used for steering force, making telemetry effects less noticeable.
+Haptic Headroom ensures telemetry feedback remains perceptible.</p>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>
+<p>Low → stronger steering, weaker telemetry</p>
+</li>
+<li>
+<p>High → clearer telemetry, slightly reduced steering force</p>
+</li>
+</ul>
+<p><strong>Recommended Usage</strong>
+Increase if telemetry effects are too weak. Decrease if steering feels too light.</p>
+<p>Default value is 30%</p>
+<p><strong>Force Spike Reduction Enable</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Enable or disable the limits extremely large force spikes generated by telemetry signals.</p>
+<p><strong>Explanation</strong></p>
+<p>Certain telemetry events can generate very sharp force spikes that may feel unrealistic or uncomfortable.</p>
+<p>The Force Spike Reduction feature detects sudden increases in force magnitude and limits them to a safer and smoother level.</p>
+<p>This helps maintain a more natural steering feel while protecting the driver from abrupt force changes.</p>
+<p><strong>Force Spike Trigger</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Defines the threshold at which force spike reduction begins to activate.</p>
+<p><strong>Explanation</strong></p>
+<p>When the magnitude of the telemetry force exceeds this threshold, the system identifies the signal as a potential force spike.</p>
+<p>Once this threshold is exceeded, the Force Spike Reduction system begins limiting the force output.</p>
+<p>Lower values make the system more sensitive and activate spike reduction earlier.</p>
+<p>Higher values allow stronger force peaks before limiting occurs.</p>
+<p><strong>Force Spike Limit</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Defines the maximum allowed magnitude of telemetry force when spike reduction is active.</p>
+<p><strong>Explanation</strong></p>
+<p>When Force Spike Reduction is triggered, the telemetry force output will be clamped to this limit.</p>
+<p>This prevents extremely large or unrealistic force spikes from reaching the wheelbase.</p>
+<p><strong>Telemetry Condition Force</strong></p>
+<p>In certain situations, steering oscillation may occur when telemetry-based force feedback is active.</p>
+<p>Although User Effects such as Damper, Friction, and Inertia are generated directly by the wheelbase, increasing damping in the User Effects section may not always eliminate oscillation caused by telemetry-generated forces.</p>
+<p>This occurs because telemetry forces are generated dynamically by the telemetry engine before being combined with other force feedback signals. If oscillation originates from the telemetry signal itself, applying condition force at the telemetry stage is more effective.</p>
+<p><strong>Friction Gain</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Adds simulated friction resistance to telemetry-based steering forces.</p>
+<p><strong>Explanation</strong></p>
+<p>Friction simulates constant resistance in the steering system.</p>
+<p>Increasing this value adds a small amount of resistance to wheel rotation, which can help stabilize steering feel when telemetry forces are active.</p>
+<p><strong>Damper Gain</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Adds damping to telemetry-generated steering forces.</p>
+<p><strong>Explanation</strong></p>
+<p>Damping produces resistance proportional to steering speed.</p>
+<p>Increasing Damper Gain can help reduce oscillations and stabilize the wheel when telemetry forces are strong or highly dynamic.</p>
+<p><strong>Inertia Gain</strong></p>
+<p><strong>Purpose</strong></p>
+<p>Adds simulated rotational inertia to telemetry-generated forces.</p>
+<p><strong>Explanation</strong></p>
+<p>Inertia simulates the rotational mass of a steering system.</p>
+<p>Increasing this value makes the steering feel heavier and smoother but may slightly reduce responsiveness.</p>
+<p><strong>6.5.10. Static force reduction</strong></p>
+<p>Not yet implemented</p>
+<h2 id="66-games-and-telemetry-force-telemetry-effects">6.6. Games and Telemetry force/ Telemetry Effects<a class="headerlink" href="#66-games-and-telemetry-force-telemetry-effects" title="Permanent link">&para;</a></h2>
+<p><strong>Telemetry Activation Guide</strong></p>
+<p><strong>iRacing</strong></p>
+<p>To enable full telemetry support (including high-frequency FFB data), you need to modify the app.ini file.</p>
+<p><strong>Step 1</strong>
+Go to the following folder:
+C:/Users/\&lt;your account&gt;/Documents/iRacing</p>
+<p><strong>Step 2</strong>
+Open the file <strong>app.ini</strong></p>
+<p><strong>Step 3</strong>
+Find and set the following parameters:</p>
+<p>irsdkLog360Hz=1
+enableFFB360HzInterpolated=1</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>
+<p>irsdkLog360Hz=1
+  → Enables 360Hz telemetry logging</p>
+</li>
+<li>
+<p>enableFFB360HzInterpolated=1
+  → Enables interpolated high-frequency FFB data</p>
+</li>
+</ul>
+<p><strong>Result:</strong>
+Improves telemetry resolution and provides smoother, more detailed Force Feedback.</p>
+<p><strong>rFactor 2 / Le Mans Ultimate (LMU)</strong></p>
+<p>Telemetry requires an external plugin. Use Simhub to config telemetry for RF2/LMU or use following steps:</p>
+<p><strong>Step 1</strong>
+Download the plugin:
+<a href="https://github.com/TheIronWolfModding/rF2SharedMemoryMapPlugin/releases/tag/3.7.14.2">https://github.com/TheIronWolfModding/rF2SharedMemoryMapPlugin/releases/tag/3.7.14.2</a></p>
+<p><strong>Step 2</strong>
+Extract the plugin files</p>
+<p><strong>Step 3</strong>
+Copy the plugin to the game plugin folder:</p>
+<ul>
+<li>
+<p>rFactor 2:
+  \&lt;rFactor2 installation folder&gt;/Bin64/Plugins</p>
+</li>
+<li>
+<p>LMU:
+  \&lt;LMU installation folder&gt;/Plugins (or equivalent)</p>
+</li>
+</ul>
+<p><img alt="media1/media/image6" src="../media1/media/image6.png" /></p>
+<p><img alt="A screenshot of a computer AI-generated content may be incorrect." src="../media1/media/image7.png" /></p>
+<p><img alt="A screenshot of a computer AI-generated content may be incorrect." src="../media1/media/image8.png" /><strong>Step 4</strong>
+Launch the game and ensure the plugin is loaded</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>
+<p>Telemetry must be running for:</p>
+</li>
+<li>
+<p>Telemetry FFB mode</p>
+</li>
+<li>
+<p>Automatically Change Profile</p>
+</li>
+<li>
+<p>Advanced effects (engine vibration, road effects, etc.)</p>
+</li>
+<li>
+<p>If telemetry is not detected:</p>
+</li>
+<li>
+<p>Restart the game</p>
+</li>
+<li>
+<p>Restart VNM SimCenter</p>
+</li>
+<li>
+<p>Check plugin installation path</p>
+</li>
+</ul>
+<p>GameS and Effects support</p>
+<p>+-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| Game      | Telemetry Force | Gear Shift | Road Texture | ABS | Brake Lock Up | Wheel Spin | Under steer | Over steer |
++===========+=================+============+==============+=====+===============+============+=============+============+
+| AC        | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| ACC       | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| ACR       | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| Iracing   | Y               | Y          | Y            | Y   | N             | N          | N           | N          |
++-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| LMU       | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++-----------+-----------------+------------+--------------+-----+---------------+------------+-------------+------------+
+| RF2       | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++===========+=================+============+==============+=====+===============+============+=============+============+
+| Raceroom  | Y               | Y          | Y            | Y   | Y             | Y          | Y           | Y          |
++===========+=================+============+==============+=====+===============+============+=============+============+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../profiles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiles">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Profiles
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../telemetry-profiles/" class="md-footer__link md-footer__link--next" aria-label="Next: Telemetry Profiles">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Telemetry Profiles
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 VNM Simulation JSC
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/vnmsimulation" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.vnmsimulation.com" target="_blank" rel="noopener" title="www.vnmsimulation.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

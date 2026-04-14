@@ -1,0 +1,60 @@
+/* VNM Simulation — Custom Styles */
+
+:root {
+  --vnm-teal: #00897b;
+  --vnm-dark: #1a1a2e;
+}
+
+/* Hero section on home page */
+.vnm-hero {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+
+.vnm-hero img {
+  margin-bottom: 1rem;
+}
+
+/* Grid cards spacing */
+.md-typeset .grid.cards > :is(ul, ol) > li {
+  border: 1px solid var(--md-primary-fg-color--light);
+  border-radius: 0.5rem;
+  transition: border-color 0.2s;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+/* Header logo sizing */
+.md-header__button.md-logo img {
+  height: 32px;
+  width: auto;
+}
+
+/* Table improvements */
+.md-typeset table:not([class]) {
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+}
+
+/* Admonition tweaks */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: #f44336;
+}
+
+/* Code blocks */
+.md-typeset pre > code {
+  font-size: 0.85rem;
+}
+
+/* Navigation improvements */
+.md-nav__title {
+  font-weight: 700;
+}
