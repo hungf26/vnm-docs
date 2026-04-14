@@ -1,24 +1,31 @@
 # System Requirements
 
-## Operating System
+Operating System
 
-| Requirement | Specification |
-|---|---|
-| OS | Windows 10 / Windows 11 |
-| Architecture | 64-bit |
++----------------------+-----------------------------------------------+
+| Requirement          | Specification                                 |
++======================+===============================================+
+| OS                   | Windows 10 / Windows 11                       |
++======================+===============================================+
+| Architecture         | 64-bit                                        |
++======================+===============================================+
 
-## Hardware Requirements
+Hardware Requirements
 
-| Component | Minimum Requirement |
-|---|---|
-| CPU | Intel / AMD Dual-Core Processor |
-| RAM | 4 GB |
-| USB | USB 2.0 or higher |
++------------------+---------------------------------------------------+
+| Component        | Minimum Requirement                               |
++==================+===================================================+
+| CPU              | Intel / AMD Dual-Core Processor                   |
++------------------+---------------------------------------------------+
+| RAM              | 4 GB                                              |
++==================+===================================================+
+| USB              | USB 2.0 or higher                                 |
++==================+===================================================+
 
-!!! note
-    These requirements apply only to the VNM SimCenter software. Individual hardware and games may have additional requirements.
+These requirements apply only to the VNM SimCenter software.
+Individual hardware games may have additional requirements.
 
-## Supported Devices
+Supported Devices
 
 The following VNM devices are supported by VNM SimCenter:
 

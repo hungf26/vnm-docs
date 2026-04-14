@@ -4,7 +4,7 @@ VNM SimCenter is the configuration software used to manage and control all suppo
 
 The software provides a unified interface for configuring and managing multiple VNM devices.
 
-## Key Features
+Key features of VNM SimCenter include:
 
 - Automatic device detection and management
 - Force Feedback configuration for Direct Drive wheelbases

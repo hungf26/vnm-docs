@@ -2,234 +2,387 @@
 
 Wheelbase Profiles allow users to save, load, and manage different wheelbase configurations.
 
-A profile stores **all current wheelbase settings**, including parameters from the Basic, Advanced, and Game Settings tabs. This allows users to quickly switch between different configurations depending on the sim racing game, vehicle type, or personal driving preference.
+A profile stores all current wheelbase settings, including parameters from the Basic, Advanced, and Game Settings tabs. This allows users to quickly switch between different configurations depending on the sim racing game, vehicle type, or personal driving preference.
 
-## Use Cases
+Using profiles makes it easy to maintain separate setups for different racing scenarios, such as:
 
-Using profiles makes it easy to maintain separate setups for different racing scenarios:
+different sim racing games
 
-- Different sim racing games
-- Different car types (Formula, GT, Rally, etc.)
-- Different steering wheels
-- Different Force Feedback preferences
+different car types (Formula, GT, Rally, etc.)
+
+different steering wheels
+
+different Force Feedback preferences
 
 Profiles can also be shared between users or backed up for later use.
 
----
+## 5.1 Profile Management
 
-## Profile Management
+The profile management controls are located in the Profile section of the wheelbase configuration page.
 
-The profile management controls are located in the **Profile section** of the wheelbase configuration page.
+Users can perform the following actions:
 
-Available actions:
+create new profiles
 
-- Create new profiles
-- Load existing profiles
-- Save changes to the current profile
-- Import profiles from external files
-- Share profiles with other users
+load existing profiles
 
----
+save changes to the current profile
 
-## Creating a New Profile
+import profiles from external files
 
-**Step 1** — Click **Add Profile**.
+share profiles with other users
 
-**Step 2** — Enter a name for the new profile.
+## 5.2. Creating a New Profile
 
-**Step 3** — Adjust the wheelbase settings as desired.
+To create a new wheelbase profile:
 
-**Step 4** — Click **Save** to store the profile.
+Step 1
+Click Add Profile.
+
+Step 2
+Enter a name for the new profile.
+
+Step 3
+Adjust the wheelbase settings as desired.
+
+Step 4
+Click Save to store the profile.
 
 The new profile will now appear in the profile list.
 
----
+## 5.3. Loading a Profile
 
-## Loading a Profile
+To switch to a different profile:
 
-**Step 1** — Open the **Profile list**.
+Step 1
+Open the Profile list.
 
-**Step 2** — Select the desired profile.
+Step 2
+Select the desired profile.
 
-**Step 3** — Click **Apply**.
+Step 3
+Click Apply.
 
 The wheelbase will immediately load the settings stored in that profile.
 
----
-
-## Saving Profile Changes
+## 5.4. Saving Profile Changes
 
 If you modify any wheelbase settings, the profile can be updated to store the new configuration.
 
-**Step 1** — Adjust the desired parameters.
+Step 1
+Adjust the desired parameters.
 
-**Step 2** — Click **Save** to store the changes in the current profile.
+Step 2
+Click Save to store the changes in the current profile.
 
-If the changes should not be saved, click **Revert** to restore the previous settings.
+If the changes should not be saved, click Revert to restore the previous settings.
 
----
-
-## Importing Profiles
+## 5.5. Importing Profiles
 
 Profiles can be imported from external files.
 
-**Step 1** — Click **Import**.
+Step 1
+Click Import.
 
-**Step 2** — Select the profile file.
+Step 2
+Select the profile file.
 
-**Step 3** — The profile will be added to the profile list.
+Step 3
+The profile will be added to the profile list.
 
 This feature allows users to load profiles shared by other users or provided by VNM.
 
----
+## 5.6. Sharing Profiles
 
-## Sharing Profiles
+Profiles can also be exported and shared with other users.
 
-Profiles can be exported and shared with other users. Sharing is useful for:
+Sharing profiles is useful when:
 
-- Exchanging Force Feedback setups with other sim racers
-- Distributing recommended settings for specific games
-- Backing up personal configurations
+exchanging Force Feedback setups with other sim racers
 
-!!! tip "Recommended Practice"
-    Create separate profiles for each sim racing game.
+distributing recommended settings for specific games
 
-    Different games use different Force Feedback models, and separate profiles help maintain consistent steering behavior across titles.
+backing up personal configurations
 
----
+Recommended Usage
 
-## Automatically Change Profile
+It is recommended to create separate profiles for each sim racing game.
+
+Different games use different Force Feedback models, and separate profiles help maintain consistent steering behavior across titles.
+
+## 5.7. Automatically Change Profile
+
+![media1/media/image3](media1/media/image3.png)
 
 **Purpose**
 
-Automatically switches the wheelbase profile based on the car you are using in-game.
+The Automatically Change Profile feature automatically switches the wheelbase profile based on the car you are using in-game.
 This eliminates the need for manual profile changes and ensures optimal Force Feedback for each vehicle.
 
 **Requirements**
 
-- VNM Telemetry Plugin version >= 0.0.107
+- VNM Telemetry Plugin version \>= 0.0.107
+
 - Applies to wheelbase profiles only
+
 - Not yet supported for Telemetry profiles
 
 **How It Works**
 
 - The plugin automatically detects the game + car when selected in-game
+
 - Each car can be assigned to a dedicated profile
+
 - When you return to that car → the profile is automatically loaded
 
-!!! note
-    If no profile is assigned to a car → the system will use the **current active profile**.
+**Important Note:**
+
+- If no profile is assigned to a car:
+  → the system will use the current active profile
 
 **Setup (for new car)**
 
-**Step 1** — Open VNM SimCenter
+When using a new car (not yet learned by the plugin), follow these steps:
 
-**Step 2** — Navigate to **Automatically Change Profile**
+**Step 1**
+Open VNM SimCenter
 
-**Step 3** — Enable the **Automatically Change Profile** feature
+**Step 2**
+Navigate to Automatically Change Profile
 
-**Step 4** — Click **Refresh** to update the car list from the plugin
+**Step 3**
+Enable the Automatically Change Profile feature
 
-**Step 5** — Select game and car from the drop lists
+**Step 4**
+Click Refresh to update the car list from the plugin
 
-**Step 6** — Configure Force Feedback settings as desired (Overall gain, user effects, etc.)
+**Step 5**
+Select game and car from the drop lists
 
-**Step 7** — Click **Save**
+**Step 6**
+Configure Force Feedback settings as desired (Overall gain, user effects..)
+
+**Step 7**
+Click Save
 
 **What Happens Next**
 
-- When you select the same car again → the saved profile will be automatically loaded
-- When switching to another car → the corresponding profile will be loaded (if available)
+- When you select the same car again:
 
-**Troubleshooting**
+  - The saved profile will be automatically loaded
 
-| Issue | Solution |
-|---|---|
-| Car does not appear | Click **Refresh** |
-| Profile does not load automatically | Ensure plugin is running; check plugin version (>= 0.0.107); make sure the feature is enabled |
+- When switching to another car:
+
+  - The corresponding profile will be loaded (if available)
+
+**Notes**
+
+- If the car does not appear:
+
+  - Click Refresh
+
+- If the profile does not load automatically:
+
+  - Ensure the plugin is running
+
+  - Check plugin version (\>= 0.0.107)
+
+  - Make sure the feature is enabled
 
 **Best Practices**
 
-- Create separate profiles for different car types (GT3, Formula, Drift)
+- Create separate profiles for different car types:
+
+  - GT3
+
+  - Formula
+
+  - Drift
+
 - Avoid using a single profile for all cars
+
 - Always click **Save** after making changes
-- Use clear profile names (e.g., `ACC_GT3_Ferrari_296`)
 
----
+- Use clear profile names
+  (e.g., ACC_GT3_Ferrari_296)
 
-## Hotkey Settings
+## 5.8. Hotkey to Change wheelbase settings and profile
 
 **Purpose**
 
-Quickly adjust wheelbase settings and switch profiles without switching to Windows.
+This section allows you to quickly adjust wheelbase settings and switch profiles without going to Windows.
 
 **Access**
 
-**Step 1** — Open VNM SimCenter
+Step 1
+Open VNM SimCenter
 
-**Step 2** — Go to: **Settings → Wheelbase**
+Step 2
+Go to:
+Settings → Wheelbase
 
-### Hotkey Step
+**Hotkey Configuration**
 
-Defines how much the value changes with each key press.
+**Hotkey step**
 
-*Recommended:* `1 – 5` (depending on desired precision)
+Purpose:
+Defines how much the value changes with each key press
 
-### Hotkey Sensitivity
+Explanation:
+Each press will increase/decrease the value based on this step
 
-Controls how fast values change when holding a key.
+Recommended:
 
-Higher value → slower change when holding the key.
+- 1--5 (depending on how fine you want the adjustment)
 
-### Notification Position
+**Hotkey sensitivity**
 
-Defines where notifications appear on screen (Center, or other positions depending on version).
+Purpose:
+Controls how fast values change when holding a key
 
-### Device Selection
+Explanation:
+Higher value → slower change when holding the key
 
-Select which device receives the hotkey input. Example: `VNM GT Steering Wheel V1`
+**Notification position**
 
-### Hotkey Mapping
+Purpose:
+Defines where notifications appear on screen
 
-#### Overall Gain (+/-)
+Options:
 
-Increase / decrease overall FFB strength.
+- Center
+
+- (Other positions depending on version)
+
+**Device selection**
+
+Purpose:
+Select which device receives the hotkey input
+
+Explanation:
+Dropdown shows the currently controlled device
+
+Example:
+
+- VNM GT Steering Wheel V1
+
+**Hotkey Mapping**
+
+You can assign keys to control functions directly.
+
+**How to assign keys (important)**
+
+**For Overall Gain, DI Ratio, Overall Filter:**
+
+Step 1
+Click the REC button
+
+Step 2
+Press the key you want to assign
+
+Step 3
+The key will be saved to that function
+
+**For Centerize and Profile switching:**
+
+Step 1
+Click on the input field
+
+Step 2
+Press the key or key combination you want to assign
+
+**Centerize**
+
+Purpose:
+Return the wheel to center position (0°)
+
+**Overall Gain (+ / -)**
+
+Purpose:
+Increase / decrease overall FFB strength
 
 Use case:
+
 - Reduce force if it feels too heavy
+
 - Increase force if feedback is too weak
 
-#### DI Ratio (+/-)
+**DI Ratio (+ / -)**
 
-Adjust DirectInput scaling ratio in TIC mode.
+Purpose:
+Adjust DirectInput scaling ratio in TIC mode
 
-#### Overall Filter (+/-)
+Explanation:
+Affects how force from the game is scaled
 
-Adjust FFB smoothness.
+**Overall Filter (+ / -)**
+
+Purpose:
+Adjust FFB smoothness
+
+Explanation:
 
 - Higher → smoother, less noise
-- Lower → more detail, may feel rough
 
-#### Centerize
+- Lower → more detail, but may feel rough
 
-Return the wheel to center position (0°).
+Profile switching
 
-#### Profile Switching
+Purpose:
+Quickly switch between profiles
 
-Quickly switch between profiles. Example: `Ctrl + Num 0`
+Example:
 
-!!! tip
-    Click **Save** in the bottom-right corner to apply all changes.
+- Ctrl + Num 0
 
----
+Click Save in the bottom-right corner to apply all changes![media1/media/image4](media1/media/image4.png)
 
-## General Settings
+## 5.9. General Settings
 
-Controls how the wheelbase is displayed and how certain UI-related behaviors function. These settings do not directly affect Force Feedback.
+This section controls how the wheelbase is displayed and how certain UI-related behaviors function. These settings do not directly affect Force Feedback, but help with monitoring and usability.
 
-| Setting | Purpose | Recommended |
-|---|---|---|
-| **Wheel max angle** | Maximum steering angle displayed in software | `1080°` for GT/road cars |
-| **Wheel angle step** | How much steering angle changes per hotkey press | `90°` or `180°` |
-| **Show current torque in %** | Displays FFB output as percentage instead of Nm | Enable for easy monitoring |
-| **Enable circle animation** | Visual indicator for base temperature, torque, error status | User preference |
+**Wheel max angle**
+
+Purpose:
+Defines the maximum steering angle displayed in the software
+
+Explanation:
+This value is used for UI visualization and wheel animation, not the physical steering limit of the wheelbase
+
+Recommended:
+
+- 1080° for most road and GT cars
+
+**Wheel angle step**
+
+Purpose:
+Defines how much the steering angle changes when adjusted via hotkeys
+
+Explanation:
+Each hotkey press will increase or decrease the wheel angle by this value using the arrow keys (after clicking on the slider handle).
+
+Recommended:
+
+- 90° or 180° for quick adjustments
+
+**Show current torque in percentage**
+
+Purpose:
+Displays current Force Feedback output as a percentage
+
+Explanation:
+Shows torque as a percentage instead of Nm, making it easier to monitor overall usage and detect limits
+
+**Enable circle animation**
+
+**Purpose:**
+Displays a circular visualization for base status
+
+Explanation:
+Provides a visual indicator for:
+
+- Base temperature
+
+- Torque output
+
+- Error status
